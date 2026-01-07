@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --nav-height: 80px;
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* -----------------------------------------------------------------
+   1. GLOBAL RESET & BASE STYLES
+   ----------------------------------------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #000000; /* Absolute Void */
+  color: #F5F5F7;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Premium Selection Style */
+::selection {
+  background: rgba(41, 151, 255, 0.3);
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Hide Scrollbar for Cleaner Look */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* -----------------------------------------------------------------
+   2. CINEMATIC EFFECTS (Noise & Fog)
+   ----------------------------------------------------------------- */
+
+/* Film Grain Overlay - Adds texture to the black background */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04; /* Very subtle */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Atmospheric Glow */
+.ambient-glow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(41, 151, 255, 0.03), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* -----------------------------------------------------------------
+   3. TYPOGRAPHY SYSTEM (Editorial)
+   ----------------------------------------------------------------- */
+
+.font-serif-display {
+  font-family: 'Crimson Pro', serif;
+}
+
+/* Hero Headline - Massive & Tight */
+.headline-cinema {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  background: linear-gradient(180deg, #FFFFFF 0%, #86868B 120%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translateZ(0); /* Hardware accelerate */
+}
+
+/* Section Title - Elegant & Clean */
+.headline-section {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: #fff;
+}
+
+/* Body Text - Readable & Relaxed */
+.text-editorial {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: #86868B; /* Metallic Grey */
+  letter-spacing: -0.01em;
+}
+
+.text-label {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2997FF;
+}
+
+/* -----------------------------------------------------------------
+   4. GLASSMORPHISM 2.0 (High Performance)
+   ----------------------------------------------------------------- */
+
+/* Base Glass Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s var(--ease-luxury), 
+              background 0.6s var(--ease-luxury), 
+              border-color 0.6s var(--ease-luxury);
+}
+
+.glass-panel:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px) scale(1.01);
+}
+
+/* Active/Highlight Glass */
+.glass-active {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(41, 151, 255, 0.3);
+  box-shadow: 0 0 30px rgba(41, 151, 255, 0.1);
+}
+
+/* -----------------------------------------------------------------
+   5. UTILITIES & ANIMATIONS
+   ----------------------------------------------------------------- */
+
+/* Metallic Text Gradients */
+.text-gradient-titanium {
+  background: linear-gradient(135deg, #FFF 0%, #8E8E93 50%, #FFF 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFE5B4 0%, #D4AF37 50%, #FFE5B4 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+/* Button Styles */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-luxury);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  transition: 0.5s;
+}
+
+.btn-premium:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+/* Layout Utilities */
+.container-fluid {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-spacing {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+/* Image Reveal Effect */
+.image-reveal-mask {
+  overflow: hidden;
+}
+
+.image-reveal-img {
+  transform: scale(1.2);
+  transition: transform 1.5s var(--ease-luxury);
+}
+
+.image-reveal-mask:hover .image-reveal-img {
+  transform: scale(1);
+}
