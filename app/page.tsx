@@ -12,7 +12,7 @@ export default function Home() {
     <main className="relative bg-[#050507] min-h-screen selection:bg-blue-500/30">
       
       {/* 1. Global Navigation (Sticky) */}
-      <Navigation />
+        <Navigation />
 
       {/* 2. Hero Section (Introduction) */}
       <div id="overview">
