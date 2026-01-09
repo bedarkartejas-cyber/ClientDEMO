@@ -3,7 +3,6 @@ import { Outfit, Crimson_Pro } from 'next/font/google'
 import './globals.css'
 
 // 1. Setup Editorial Fonts
-// 'Outfit' for modern UI text (Apple-style clean sans)
 const outfit = Outfit({ 
   subsets: ['latin'],
   variable: '--font-outfit',
@@ -11,7 +10,6 @@ const outfit = Outfit({
   weight: ['300', '400', '500', '600', '700'],
 })
 
-// 'Crimson Pro' for elegant, high-fashion accent text
 const crimson = Crimson_Pro({ 
   subsets: ['latin'],
   variable: '--font-crimson',
@@ -21,9 +19,8 @@ const crimson = Crimson_Pro({
 })
 
 export const metadata: Metadata = {
-  title: 'ASUS ZenBook Pro | Cinematic Showcase',
-  description: 'Experience the new ZenBook Pro 14 OLED. Precision crafted for the creative professional.',
-  themeColor: '#000000',
+  title: 'HP Victus  | Cinematic Showcase',
+  description: 'Experience the new HP Victus. Precision crafted for the creative professional.',
 }
 
 export default function RootLayout({
@@ -32,23 +29,40 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${crimson.variable} scroll-smooth`}>
-      <body className="bg-canvas text-content-primary antialiased selection:bg-zen-blue/30 selection:text-white">
-        
-        {/* 2. GLOBAL CINEMATIC LAYERS 
-           These stay fixed while content scrolls over them 
+    /* 2. FORCE BLACK BACKGROUND ON HTML TAG TO PREVENT FLICKER */
+    <html 
+      lang="en" 
+      className={`${outfit.variable} ${crimson.variable} scroll-smooth`}
+      style={{ backgroundColor: '#000000' }} 
+    >
+      <head>
+        {/* 3. CRITICAL INLINE SCRIPT
+            This runs before React loads to ensure the body is never white.
         */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                document.documentElement.style.backgroundColor = '#000000';
+                document.body.style.backgroundColor = '#000000';
+              })();
+            `,
+          }}
+        />
+      </head>
+      
+      {/* 4. LAYOUT STRUCTURE */}
+      <body className="bg-black text-[#F5F5F7] antialiased selection:bg-[#2997ff]/30 selection:text-white overflow-x-hidden">
         
-        {/* Film Grain Texture (See globals.css .noise-overlay) */}
+        {/* Global Cinematic Background Layers */}
         <div className="noise-overlay" />
-        
-        {/* Subtle Bottom Fog (See globals.css .ambient-glow) */}
         <div className="ambient-glow" />
+      
 
-        {/* 3. Main Content Wrapper */}
-        <div className="relative z-10">
+        {/* Main Content Wrapper */}
+        <main className="relative z-10 min-h-screen">
           {children}
-        </div>
+        </main>
         
       </body>
     </html>

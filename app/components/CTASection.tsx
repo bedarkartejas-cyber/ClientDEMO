@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const models = [
   {
-    name: 'ZenBook 14 OLED',
+    name: 'Victus 16',
     tagline: 'The Essential Classic',
     processor: 'Intel® Core™ Ultra 5',
     ram: '16GB LPDDR5X',
@@ -19,7 +19,7 @@ const models = [
     delay: 0
   },
   {
-    name: 'ZenBook Pro 14',
+    name: 'Victus 16 Pro',
     tagline: 'The Creator Standard',
     processor: 'Intel® Core™ Ultra 7',
     ram: '32GB LPDDR5X',
@@ -33,7 +33,7 @@ const models = [
     delay: 0.1
   },
   {
-    name: 'ZenBook Pro 16X',
+    name: 'Victus 16X',
     tagline: 'Desktop Replacement',
     processor: 'Intel® Core™ i9-13900H',
     ram: '64GB LPDDR5X',

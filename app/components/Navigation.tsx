@@ -54,10 +54,10 @@ export default function Navigation() {
           {/* 1. BRAND LOGO */}
           <a href="#" className="flex items-center gap-3 group z-50">
             <div className="w-8 h-8 bg-white text-black flex items-center justify-center rounded-lg font-bold text-sm tracking-tighter group-hover:rotate-180 transition-transform duration-700 ease-luxury">
-              A
+              HP
             </div>
             <span className="font-sans text-lg font-medium tracking-wide text-white group-hover:text-white/70 transition-colors">
-              ASUS <span className="text-white/40 font-light">Pro</span>
+              Helix <span className="text-white/40 font-light">AI</span>
             </span>
           </a>
 

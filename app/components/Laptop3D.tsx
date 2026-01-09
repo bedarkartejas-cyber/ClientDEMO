@@ -130,7 +130,7 @@ function LaptopModel({ scrollProgress }: { scrollProgress: MotionValue<number> }
           />
         </mesh>
 
-        {/* Logo (ASUS Monogram) on back of lid */}
+        {/* Logo (HP Monogram) on back of lid */}
         <mesh position={[0.8, 1.6, -0.081]} rotation={[0, Math.PI, 0]}>
            {/* Simple geometric shape for logo */}
            <planeGeometry args={[0.3, 0.3]} />

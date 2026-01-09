@@ -29,7 +29,7 @@ const galleryItems = [
     id: '04',
     src: '/gallery/img4.jpg',
     title: 'Interaction',
-    description: 'The ASUS Dial. Physical rotary control for Adobe Creative Cloud apps, right at your fingertips.',
+    description: 'The HP Dial. Physical rotary control for Adobe Creative Cloud apps, right at your fingertips.',
     color: '#050507'
   }
 ]
@@ -84,7 +84,7 @@ function Card({
 
             <div className="flex items-center gap-4 opacity-30">
                <div className="h-[1px] w-full bg-white"></div>
-               <span className="text-xs font-mono uppercase whitespace-nowrap">ZenBook Pro Series</span>
+               <span className="text-xs font-mono uppercase whitespace-nowrap">Victus Series</span>
             </div>
           </div>
 

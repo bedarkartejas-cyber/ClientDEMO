@@ -5,18 +5,18 @@ import { motion } from 'framer-motion'
 const footerLinks = [
   {
     title: 'Shop and Learn',
-    links: ['ZenBook Pro', 'ZenBook S', 'VivoBook', 'ProArt Studiobook', 'Accessories']
+    links: ['ZVictus 16', 'Victus S', 'VivoBook', 'ProArt Studiobook', 'Accessories']
   },
   {
     title: 'Features',
-    links: ['OLED Display', 'ProArt Creator Hub', 'ScreenPad™', 'MyASUS', 'Software']
+    links: ['OLED Display', 'ProArt Creator Hub', 'ScreenPad™', 'MyHP', 'Software']
   },
   {
     title: 'Support',
     links: ['Product Registration', 'Driver Downloads', 'Service Centers', 'Warranty', 'Contact Us']
   },
   {
-    title: 'About ASUS',
+    title: 'About HP',
     links: ['About Us', 'News & Awards', 'Investor Relations', 'Employment', 'Sustainability']
   },
 ]
@@ -32,7 +32,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-1">
             <a href="#" className="text-white text-xl font-bold tracking-widest uppercase mb-6 inline-block">
-              ASUS
+              HP
             </a>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
               In Search of Incredible.<br />
@@ -75,7 +75,7 @@ export default function Footer() {
         {/* -- BOTTOM BAR -- */}
         <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-white/30 text-xs">
-            © 2026 ASUSTeK Computer Inc. All rights reserved.
+            © 2026 HP Computer Inc. All rights reserved.
           </div>
           
           <div className="flex flex-wrap justify-center gap-8">
